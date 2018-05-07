@@ -7,99 +7,59 @@
     tools:context="com.app.androidkt.mqtt.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <EditText
-        android:id="@+id/textMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/enter_message"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/publishMessage"
-        android:layout_width="150dp"
+    <ToggleButton
+        android:id="@+id/toggleButtonBulb"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="@string/publish"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textMessage"
+        android:layout_marginEnd="64dp"
+        android:text="@string/togglebutton2"
+        android:textOff="@string/tbBulb_OFF"
+        android:textOn="@string/tbBulb_ON"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewBulb"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <EditText
-        android:id="@+id/subscribeTopic"
+    <ToggleButton
+        android:id="@+id/toggleButtonDoor"
         android:layout_width="wrap_content"
-        android:layout_height="46dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/subscribe_topic"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/textMessage"
-        app:layout_constraintTop_toBottomOf="@+id/textMessage" />
+        android:layout_height="wrap_content"
+        android:text="@string/togglebutton1"
+        android:textOff="@string/tbDoor_Close"
+        android:textOn="@string/tbDoor_Open"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewDoor"
+        app:layout_constraintEnd_toEndOf="@+id/toggleButtonBulb" />
+
+    <TextView
+        android:id="@+id/textViewBulb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/textview1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/textViewBulb" />
+
+    <TextView
+        android:id="@+id/textViewDoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/textview2"
+        app:layout_constraintEnd_toEndOf="@+id/textViewBulb"
+        app:layout_constraintStart_toStartOf="@+id/textViewBulb"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBulb"
+        tools:text="@string/textViewDoor" />
 
     <Button
-        android:id="@+id/subscribe"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="@string/subscribe"
-        app:layout_constraintBaseline_toBaselineOf="@+id/subscribeTopic"
-        app:layout_constraintEnd_toEndOf="@+id/publishMessage" />
-
-    <EditText
-        android:id="@+id/unSubscribeTopic"
+        android:id="@+id/btnSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/unsubscribe_topic"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/subscribeTopic"
-        app:layout_constraintTop_toBottomOf="@+id/subscribeTopic" />
-
-    <Button
-        android:id="@+id/unSubscribe"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="@string/unsubscribe"
-        app:layout_constraintBaseline_toBaselineOf="@+id/unSubscribeTopic"
-        app:layout_constraintEnd_toEndOf="@+id/subscribe" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
-
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/btnSettings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
