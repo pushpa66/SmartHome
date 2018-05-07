@@ -31,6 +31,8 @@ public class SettingsActivity extends AppCompatActivity {
         unSubscribe = (Button) findViewById(R.id.unSubscribe);
 
         subscribeTopic = (EditText) findViewById(R.id.subscribeTopic);
+        subscribeTopic.setText(Constants.SUBSCRIBE_TOPIC);
+
         unSubscribeTopic = (EditText) findViewById(R.id.unSubscribeTopic);
         client = pahoMqttClient.getMqttClient(getApplicationContext(), Constants.MQTT_BROKER_URL, Constants.CLIENT_ID);
 
