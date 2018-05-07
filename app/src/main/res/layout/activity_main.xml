@@ -35,21 +35,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="64dp"
-        android:text="@string/textview1"
+        android:text="@string/textViewBulb"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/textViewBulb" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewDoor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="@string/textview2"
+        android:text="@string/textViewDoor"
         app:layout_constraintEnd_toEndOf="@+id/textViewBulb"
         app:layout_constraintStart_toStartOf="@+id/textViewBulb"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBulb"
-        tools:text="@string/textViewDoor" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewBulb" />
 
     <Button
         android:id="@+id/btnSettings"
