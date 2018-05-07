@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.androidkt.mqtt.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <EditText
+        android:id="@+id/textMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/enter_message"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/publishMessage"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/publish"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textMessage"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/subscribeTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/subscribe_topic"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/textMessage"
+        app:layout_constraintTop_toBottomOf="@+id/textMessage" />
+
+    <Button
+        android:id="@+id/subscribe"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/subscribe"
+        app:layout_constraintBaseline_toBaselineOf="@+id/subscribeTopic"
+        app:layout_constraintEnd_toEndOf="@+id/publishMessage" />
+
+    <EditText
+        android:id="@+id/unSubscribeTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/unsubscribe_topic"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/subscribeTopic"
+        app:layout_constraintTop_toBottomOf="@+id/subscribeTopic" />
+
+    <Button
+        android:id="@+id/unSubscribe"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/unsubscribe"
+        app:layout_constraintBaseline_toBaselineOf="@+id/unSubscribeTopic"
+        app:layout_constraintEnd_toEndOf="@+id/subscribe" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+</android.support.constraint.ConstraintLayout>
