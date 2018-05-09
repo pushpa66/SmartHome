@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     private PahoMqttClient pahoMqttClient;
 
-    private ToggleButton toggleButtonBulb, toggleButtonDoor;
+    private ToggleButton toggleButtonBulb1, toggleButtonBulb2, toggleButtonFan;
+    private TextView temperature, humidity, motion;
     private Button btnSettings;
 
     @Override
@@ -27,34 +29,53 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         pahoMqttClient = new PahoMqttClient();
 
-        toggleButtonBulb = (ToggleButton) findViewById(R.id.toggleButtonBulb);
-        toggleButtonDoor = (ToggleButton) findViewById(R.id.toggleButtonDoor);
+        toggleButtonBulb1 = (ToggleButton) findViewById(R.id.toggleButtonBulb1);
+        toggleButtonBulb2 = (ToggleButton) findViewById(R.id.toggleButtonBulb2);
+        toggleButtonFan = (ToggleButton) findViewById(R.id.toggleButtonFan);
+
+        temperature = (TextView) findViewById(R.id.textViewTval);
+        humidity = (TextView) findViewById(R.id.textViewHval);
+        motion = (TextView) findViewById(R.id.textViewMval);
 
         client = pahoMqttClient.getMqttClient(getApplicationContext(), Constants.MQTT_BROKER_URL, Constants.CLIENT_ID);
 
-        toggleButtonBulb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        toggleButtonBulb1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // The toggle is enabled
-                    String msg = "Bulb:ON";
+                    String msg = "Bulb1:ON";
                     publish(msg, Constants.PUBLISH_TOPIC);
                 } else {
                     // The toggle is disabled
-                    String msg = "Bulb:OFF";
+                    String msg = "Bulb1:OFF";
                     publish(msg, Constants.PUBLISH_TOPIC);
                 }
             }
         });
 
-        toggleButtonDoor.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        toggleButtonBulb2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    String msg = "Door:OPEN";
+                    // The toggle is enabled
+                    String msg = "Bulb2:ON";
+                    publish(msg, Constants.PUBLISH_TOPIC);
+                } else {
+                    // The toggle is disabled
+                    String msg = "Bulb2:OFF";
+                    publish(msg, Constants.PUBLISH_TOPIC);
+                }
+            }
+        });
+
+        toggleButtonFan.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    String msg = "Fan:ON";
                     publish(msg, Constants.PUBLISH_TOPIC);
                     // The toggle is enabled
                 } else {
                     // The toggle is disabled
-                    String msg = "Door:CLOSE";
+                    String msg = "Fan:OFF";
                     publish(msg, Constants.PUBLISH_TOPIC);
                 }
             }

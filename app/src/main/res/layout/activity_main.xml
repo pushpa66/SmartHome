@@ -8,46 +8,81 @@
     tools:layout_editor_absoluteY="81dp">
 
 
+    <TextView
+        android:id="@+id/textViewMval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewM"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewM"
+        app:layout_constraintEnd_toEndOf="@+id/textViewHval"
+        app:layout_constraintStart_toStartOf="@+id/textViewHval" />
+
+    <TextView
+        android:id="@+id/textViewM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/textViewPirMotion"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewH"
+        app:layout_constraintStart_toStartOf="@+id/textViewH"
+        app:layout_constraintTop_toBottomOf="@+id/textViewH" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/textViewFan"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewBulb2"
+        app:layout_constraintStart_toStartOf="@+id/textViewBulb2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBulb2" />
+
     <ToggleButton
-        android:id="@+id/toggleButtonBulb"
+        android:id="@+id/toggleButtonBulb1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="64dp"
-        android:text="@string/togglebutton2"
-        android:textOff="@string/tbBulb_OFF"
-        android:textOn="@string/tbBulb_ON"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewBulb"
+        android:text="@string/togglebutton"
+        android:textOff="@string/tb_OFF"
+        android:textOn="@string/tb_ON"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewBulb1"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ToggleButton
-        android:id="@+id/toggleButtonDoor"
+        android:id="@+id/toggleButtonBulb2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/togglebutton1"
-        android:textOff="@string/tbDoor_Close"
-        android:textOn="@string/tbDoor_Open"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewDoor"
-        app:layout_constraintEnd_toEndOf="@+id/toggleButtonBulb" />
+        android:text="@string/togglebutton"
+        android:textOff="@string/tb_OFF"
+        android:textOn="@string/tb_ON"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewBulb2"
+        app:layout_constraintEnd_toEndOf="@+id/toggleButtonBulb1" />
 
     <TextView
-        android:id="@+id/textViewBulb"
+        android:id="@+id/textViewBulb1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="64dp"
-        android:text="@string/textViewBulb"
+        android:text="@string/textViewBulb1"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewDoor"
+        android:id="@+id/textViewBulb2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="@string/textViewDoor"
-        app:layout_constraintEnd_toEndOf="@+id/textViewBulb"
-        app:layout_constraintStart_toStartOf="@+id/textViewBulb"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBulb" />
+        android:layout_marginTop="32dp"
+        android:text="@string/textViewBulb2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewBulb1"
+        app:layout_constraintStart_toStartOf="@+id/textViewBulb1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBulb1" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -60,4 +95,57 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/textViewTemperature"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textViewTval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewT"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewT"
+        app:layout_constraintEnd_toEndOf="@+id/toggleButtonFan"
+        app:layout_constraintStart_toStartOf="@+id/toggleButtonFan" />
+
+    <TextView
+        android:id="@+id/textViewH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/textViewHumidity"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewT"
+        app:layout_constraintStart_toStartOf="@+id/textViewT"
+        app:layout_constraintTop_toBottomOf="@+id/textViewT" />
+
+    <TextView
+        android:id="@+id/textViewHval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewH"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewH"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTval"
+        app:layout_constraintStart_toStartOf="@+id/textViewTval" />
+
+    <ToggleButton
+        android:id="@+id/toggleButtonFan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/togglebutton"
+        android:textOff="@string/tb_OFF"
+        android:textOn="@string/tb_ON"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/toggleButtonBulb2" />
+
 </android.support.constraint.ConstraintLayout>

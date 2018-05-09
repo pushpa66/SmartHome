@@ -15,12 +15,15 @@ import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.json.JSONObject;
 
 public class MqttMessageService extends Service {
 
     private static final String TAG = "MqttMessageService";
     private PahoMqttClient pahoMqttClient;
     private MqttAndroidClient mqttAndroidClient;
+
+    private String temperature, humidity, motion;
 
     public MqttMessageService() {
     }
@@ -45,7 +48,14 @@ public class MqttMessageService extends Service {
 
             @Override
             public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
-                setMessageNotification(s, new String(mqttMessage.getPayload()));
+
+//                JSONObject obj = new JSONObject(msg.toString());
+                JSONObject obj = new JSONObject(new String(mqttMessage.getPayload()));
+                temperature = (String) obj.get("T");
+                humidity = (String) obj.get("H");
+                motion = (String) obj.get("M");
+//                setMessageNotification(s, new String(mqttMessage.getPayload()));
+                setMessageNotification(s, motion);
             }
 
             @Override

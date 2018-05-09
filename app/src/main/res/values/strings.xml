@@ -1,11 +1,18 @@
 <resources>
     <string name="app_name">Smart Home</string>
-    <string name="textViewBulb">Bulb State</string>
-    <string name="tbBulb_ON">ON</string>
-    <string name="tbBulb_OFF">OFF</string>
-    <string name="textViewDoor">Door State</string>
-    <string name="tbDoor_Open">OPEN</string>
-    <string name="tbDoor_Close">CLOSE</string>
+    <string name="textViewBulb1">Bulb1 State</string>
+    <string name="textViewBulb2">Bulb2 State</string>
+    <string name="textViewFan">Fan State</string>
+    <string name="tb_ON">ON</string>
+    <string name="tb_OFF">OFF</string>
+    <string name="textViewT">0 C</string>
+    <string name="textViewH">0 %</string>
+    <string name="textViewM">NO</string>
+
+    <string name="textViewTemperature">Temperature</string>
+    <string name="textViewHumidity">Humidity</string>
+    <string name="textViewPirMotion">Motion</string>
+
 
     <string name="btnSettings">Settings</string>
 
@@ -17,7 +24,8 @@
     <string name="unsubscribe_topic">Unsubscribe topic</string>
     <string name="btnBack">Back</string>
 
-    <string name="togglebutton1">ToggleButton</string>
+    <string name="togglebutton">ToggleButton</string>
     <string name="togglebutton2">ToggleButton</string>
+    <string name="togglebutton3">ToggleButton</string>
 
 </resources>
