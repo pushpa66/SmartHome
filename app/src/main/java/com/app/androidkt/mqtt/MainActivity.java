@@ -1,6 +1,9 @@
 package com.app.androidkt.mqtt;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private MqttAndroidClient client;
     private String TAG = "MainActivity";
     private PahoMqttClient pahoMqttClient;
+    private BroadcastReceiver br;
 
     private ToggleButton toggleButtonBulb1, toggleButtonBulb2, toggleButtonFan;
     private TextView temperature, humidity, motion;
@@ -84,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         btnSettings = (Button) findViewById(R.id.btnSettings);
         btnSettings.setOnClickListener(new View.OnClickListener()
         {
-
             @Override
             public void onClick(View v)
             {
@@ -92,9 +95,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        br = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+
+                Bundle bundle = intent.getExtras();
+                if (bundle != null) {
+                    ((TextView) findViewById(R.id.textViewTval))
+                            .setText(bundle.getString("T"));
+                    ((TextView) findViewById(R.id.textViewHval))
+                            .setText(bundle.getString("H"));
+                    ((TextView) findViewById(R.id.textViewMval))
+                            .setText(bundle.getString("M"));
+                }
+            }
+        };
+
         Intent intent = new Intent(MainActivity.this, MqttMessageService.class);
         startService(intent);
     }
+
+    @Override
+    protected void onResume() {
+        // TODO Auto-generated method stub
+        super.onResume();
+        registerReceiver(br, new IntentFilter("1"));
+    }
+
+//    @Override
+//    protected void onPause() {
+//        // TODO Auto-generated method stub
+//        super.onPause();
+//        unregisterReceiver(br);
+//    }
 
     private void goToSettings(View view)
     {
@@ -126,9 +159,7 @@ public class MainActivity extends AppCompatActivity {
         if (!msg.isEmpty()) {
             try {
                 pahoMqttClient.publishMessage(client, msg, 1, topic);
-            } catch (MqttException e) {
-                e.printStackTrace();
-            } catch (UnsupportedEncodingException e) {
+            } catch (MqttException | UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
         }

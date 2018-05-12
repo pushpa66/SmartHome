@@ -55,7 +55,8 @@ public class MqttMessageService extends Service {
                 humidity = (String) obj.get("H");
                 motion = (String) obj.get("M");
 //                setMessageNotification(s, new String(mqttMessage.getPayload()));
-                setMessageNotification(s, motion);
+//                setMessageNotification(s, motion);
+                publishResults(temperature, humidity, motion);
             }
 
             @Override
@@ -81,6 +82,16 @@ public class MqttMessageService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
+    }
+
+    private void publishResults(String T, String H, String M) {
+
+        Intent intent = new Intent("1");
+        intent.putExtra("T", T);
+        intent.putExtra("H", H);
+        intent.putExtra("M", M);
+
+        sendBroadcast(intent);
     }
 
     private void setMessageNotification(@NonNull String topic, @NonNull String msg) {
