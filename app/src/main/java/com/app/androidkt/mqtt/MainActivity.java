@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private BroadcastReceiver br;
 
     private ToggleButton toggleButtonBulb1, toggleButtonBulb2, toggleButtonFan;
-    private TextView temperature, humidity, motion;
+    private TextView temperature, humidity, motion, gasLeak;
     private Button btnSettings;
 
     @Override
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         temperature = (TextView) findViewById(R.id.textViewTval);
         humidity = (TextView) findViewById(R.id.textViewHval);
         motion = (TextView) findViewById(R.id.textViewMval);
+        gasLeak = (TextView) findViewById(R.id.textViewGval);
 
         client = pahoMqttClient.getMqttClient(getApplicationContext(), Constants.MQTT_BROKER_URL, Constants.CLIENT_ID);
 
@@ -107,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
                             .setText(bundle.getString("H"));
                     ((TextView) findViewById(R.id.textViewMval))
                             .setText(bundle.getString("M"));
+                    ((TextView) findViewById(R.id.textViewGval))
+                            .setText(bundle.getString("G"));
                 }
             }
         };

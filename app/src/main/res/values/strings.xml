@@ -8,10 +8,12 @@
     <string name="textViewT">0 C</string>
     <string name="textViewH">0 %</string>
     <string name="textViewM">NO</string>
+    <string name="textViewG">NO</string>
 
     <string name="textViewTemperature">Temperature</string>
     <string name="textViewHumidity">Humidity</string>
     <string name="textViewPirMotion">Motion</string>
+    <string name="textViewPirGas">Gas Leak</string>
 
 
     <string name="btnSettings">Settings</string>

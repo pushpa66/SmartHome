@@ -23,7 +23,7 @@ public class MqttMessageService extends Service {
     private PahoMqttClient pahoMqttClient;
     private MqttAndroidClient mqttAndroidClient;
 
-    private String temperature, humidity, motion;
+    private String temperature, humidity, motion, gasLeak;
 
     public MqttMessageService() {
     }
@@ -51,12 +51,13 @@ public class MqttMessageService extends Service {
 
 //                JSONObject obj = new JSONObject(msg.toString());
                 JSONObject obj = new JSONObject(new String(mqttMessage.getPayload()));
-                temperature = (String) obj.get("T");
-                humidity = (String) obj.get("H");
+                temperature = obj.get("T") + " C";
+                humidity = obj.get("H") + " %";
                 motion = (String) obj.get("M");
+                gasLeak = (String) obj.get("G");
 //                setMessageNotification(s, new String(mqttMessage.getPayload()));
 //                setMessageNotification(s, motion);
-                publishResults(temperature, humidity, motion);
+                publishResults(temperature, humidity, motion, gasLeak);
             }
 
             @Override
@@ -84,12 +85,13 @@ public class MqttMessageService extends Service {
         Log.d(TAG, "onDestroy");
     }
 
-    private void publishResults(String T, String H, String M) {
+    private void publishResults(String T, String H, String M, String G) {
 
         Intent intent = new Intent("1");
         intent.putExtra("T", T);
         intent.putExtra("H", H);
         intent.putExtra("M", M);
+        intent.putExtra("G", G);
 
         sendBroadcast(intent);
     }

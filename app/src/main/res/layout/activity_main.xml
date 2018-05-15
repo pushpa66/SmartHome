@@ -9,6 +9,17 @@
 
 
     <TextView
+        android:id="@+id/textViewM3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/textViewPirGas"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewM"
+        app:layout_constraintStart_toStartOf="@+id/textViewM"
+        app:layout_constraintTop_toBottomOf="@+id/textViewM" />
+
+    <TextView
         android:id="@+id/textViewMval"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/textViewPirMotion"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewH"
         app:layout_constraintStart_toStartOf="@+id/textViewH"
         app:layout_constraintTop_toBottomOf="@+id/textViewH" />
@@ -36,7 +47,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:text="@string/textViewFan"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewBulb2"
         app:layout_constraintStart_toStartOf="@+id/textViewBulb2"
         app:layout_constraintTop_toBottomOf="@+id/textViewBulb2" />
@@ -67,9 +78,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:text="@string/textViewBulb1"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/textViewBulb2"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewBulb1"
         app:layout_constraintStart_toStartOf="@+id/textViewBulb1"
         app:layout_constraintTop_toBottomOf="@+id/textViewBulb1" />
@@ -102,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/textViewTemperature"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -123,7 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/textViewHumidity"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewT"
         app:layout_constraintStart_toStartOf="@+id/textViewT"
         app:layout_constraintTop_toBottomOf="@+id/textViewT" />
@@ -147,5 +158,15 @@
         android:textOn="@string/tb_ON"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="@+id/toggleButtonBulb2" />
+
+    <TextView
+        android:id="@+id/textViewGval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewG"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewM3"
+        app:layout_constraintEnd_toEndOf="@+id/textViewMval"
+        app:layout_constraintStart_toStartOf="@+id/textViewMval" />
 
 </android.support.constraint.ConstraintLayout>
